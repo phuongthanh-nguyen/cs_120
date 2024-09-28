@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    color: #f5b0bd;
+    margin-bottom: 30px;
+}
+
+h2 {
+    color: #ae6e4e;
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.centered-list {
+    border: 2px solid #067fd0;
+    border-radius: 15px;
+    padding: 15px;
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+.food-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 50px 30px;
+}
+
+.food-img {
+    background-image: url('images/banhbotloc.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    width: 500px;
+    height: 250px;
+}
+
+.food-text {
+    padding: 30px;
+}
+
+.books-table {
+    border: 1;
+    border-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+td, th {
+    padding: 10px;
+}
+
+td img {
+    display: flex;
+    margin: 0 auto;
+}
+
+tr:nth-child(odd) {
+    color: #ffffff;
+    background-color: #414141;
+}
+
+tr:nth-child(even){
+    background-color: #c8a2c8;
+}
+
+form {
+    max-width: 500px;
+}
+
+.form-q {
+    margin-bottom: 15px;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+
+input, select {
+    display: inline-block;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+.icon-container {
+    position: fixed;
+    top: 100px;
+    right: 35px;
+}
