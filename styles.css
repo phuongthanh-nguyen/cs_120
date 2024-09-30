@@ -83,7 +83,7 @@ label {
     width: 150px;
 }
 
-input, select {
+input, select, button {
     display: inline-block;
     margin-left: 25px;
     padding: 5px;
