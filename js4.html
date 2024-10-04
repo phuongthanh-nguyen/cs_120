@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js4</title>
+</head>
+
+<body>
+    <script>
+     var start = parseInt(prompt("Enter the start of the range: "));
+     var end = parseInt(prompt("Enter the end of the range: "));
+    
+        var sum = 0; // sum begins at 0
+        var odd_num = "";
+    for (var i = start; i <= end; i++) { //iterates a cycle that begins at start and end at end
+        sum += i; //loops through range while continuously adding each new num to the sum
+
+        if (i % 2 !== 0) { //checks for remainders -- odd or even
+            odd_num += i + " ";
+        }
+    };
+
+    document.write("The odd numbers in the range are: " + odd_num + "<br>");
+    document.write("The sum of all the numbers in the range is " + sum + ".");
+   </script>
+</body>
+</html>
