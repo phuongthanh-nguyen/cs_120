@@ -1,8 +1,91 @@
 <html>
     <head>
-       <h1>Coming Soon</h1> 
+       <title>insertbandname</title> 
+       <link rel="stylesheet" type="text/css" href="proj1styles.css">
     </head>
     <body>
+        <div class="header-box">
+            <img src="images/fj.png" alt="Logo" height="70px">
+            <div class="nav-bar">
+                <ul>
+                    <li><a href="whoweare.html">Who We Are</a>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="mediagallery.html">Media Gallery</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="banner">
+            <img src="images/wedding_banner.jpg" alt="Banner Image">
+        </div>
+        
+        <div class="band-intro">
+            <div class="intro-text">
+            <h2>Hello, we are</h2>
+            <p>Fiji Blue, a band based in Los Angelos. Lorem ipsum odor amet, consectetuer adipiscing elit. Primis efficitur conubia potenti inceptos tortor nunc sollicitudin aenean. Proin elementum mattis adipiscing mi lobortis porta at, porta quis. Molestie accumsan tempor sed vehicula ullamcorper mollis. Enim ipsum odio vel arcu lacinia elit vehicula erat.</p>
+            </div>
+            <div class="intro-img">
+                <img src="images/band-img.jpg"></div>
+        </div>
 
+        <div class="service-section">
+            <h2>Services</h2>
+            <div class="service-options">
+                <div>
+                    <h3>CEREMONY</h3>
+                    <p>Start your big day with the perfect soundtrack. We deliver a heartfelt performance tailored to your special moments, from the walk down the aisle to your first kiss. With a blend of tradition and personal touches, we set the tone for a memorable ceremony.</p>
+                </div>
+                <div>
+                    <h3>COCKTAIL HOUR</h3>
+                    <p>Keep the vibe lively yet elegant during cocktail hour. We provide smooth jazz, acoustic hits, and modern favorites to enhance the atmosphere, offering the perfect backdrop for your guests to mingle and relax.</p>
+                </div>
+                <div>
+                    <h3>RECEPTION</h3>
+                    <p>Get ready to party! We bring energy to your reception, ensuring a packed dance floor with a mix of interactive performances and classic wedding hits. From your grand entrance to the final song, we make sure your celebration is unforgettable.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Request Info</h2>
+        <form class="request-form">
+            <div class="form-q">
+                <input type="text" id="name" placeholder=" " required>
+                <label for="name">First and Last Name</label>
+            </div>
+            <div class="form-q">
+                <input type="text" id="phone" placeholder=" " required>
+                <label for="phone">Phone Number</label>
+            </div>
+            <div class="form-q">
+                <input type="text" id="email" placeholder=" " required>
+                <label for="email">Email</label>
+            </div>
+            <div class="form-q">
+                <select id="options" name="options" required>
+                    <option value="" disabled selected>Select An Option</option>
+                    <option value="ceremony">Ceremony</option>
+                    <option value="cocktail">Cocktail Hour</option>
+                    <option value="reception">Reception</option>
+                    <option value="all-services">All of the Above</option>
+                </select>
+            </div>
+            <div class="form-q">
+                <input type="text" id="message" placeholder=" " required>
+                <label for="message">Message</label>
+            </div>
+            <button class="submit-button">SUBMIT</button>
+        </form>
+
+        <div class="footer-box">
+            <hr class="footer-line">
+            <div class="footer-content">
+                <img src="images/fj.png" alt="Logo" height="50px">
+                <div class="footer-text">
+                    <p>Phone Number: 123-456-7890</p>
+                    <p>Email: lovefijiblue@gmail.com</p>
+                    <p>Based in Los Angelos, CA</p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

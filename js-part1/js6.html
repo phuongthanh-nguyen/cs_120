@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js6</title>
+</head>
+
+<div id="answer"></div>
+
+<body>
+    <script>
+    function count(array, value) {
+        let num_items = 0;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i] < value) {
+                num_items ++;
+            }
+        }
+
+        return num_items;
+    }
+
+    let array = [3, 55, 30, 28, 9, 12];
+    let value = 10;
+
+    //document.write(count(array, value));
+
+    function testCount() {
+        let array = [3, 55, 30, 28, 9, 12];
+        let value = 10;
+        let answer = count(array, value);
+
+        document.getElementById("answer").innerHTML = "Count is " + answer + ".";
+    }
+
+    testCount();
+    </script>
+</body>
+</html>
