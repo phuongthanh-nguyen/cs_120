@@ -63,8 +63,30 @@ h4 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
+    padding: 20px 30px;
+    box-sizing: border-box;
     color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .header-box {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 20px;
+    }
+    .nav-bar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .nav-bar ul li {
+        flex-direction: column;
+        margin: 10px 0;
+    }
 }
 
 .nav-bar {
@@ -104,6 +126,7 @@ h4 {
     background-position: center;
     border-radius: 16px;
     border: 3px solid #ffffff;
+    margin: 25px 0;
 }
 
 .banner-text {
@@ -163,7 +186,7 @@ h4 {
 
 .service-option img {
     width: 95%;
-    max-height: 300px;
+    height: auto;
     border: 2px solid #ffffff;
     border-radius: 10px;
     margin-top: 25px;
@@ -171,6 +194,18 @@ h4 {
 
 .service-options:last-child {
     margin-right: 0;
+}
+
+@media (max-width: 768px) {
+    .service-section {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .service-option {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
 
 .request-form {
@@ -245,24 +280,6 @@ select:not(:placeholder-shown) + label {
     font-size: 18px;
     color: #000000;
     line-height: 175%;
-}
-
-@media (max-width: 768px) {
-    .members-info-table, 
-    .members-info-table tr, 
-    .members-info-table td {
-        display: block;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .members-info img {
-        width: 80%;
-    }
-
-    .members-text {
-        padding-left: 0;
-    }
 }
 
 .quote{
