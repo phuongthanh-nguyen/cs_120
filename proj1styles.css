@@ -163,7 +163,7 @@ h4 {
 
 .service-option img {
     width: 95%;
-    height: 300px;
+    max-height: 300px;
     border: 2px solid #ffffff;
     border-radius: 10px;
     margin-top: 25px;
@@ -265,11 +265,9 @@ select:not(:placeholder-shown) + label {
     }
 }
 
-table.gallery {
-}
-
-table.gallery img {
-    width: 30%;
+.quote{
+    width: 75%;
+    font-style: italic;
 }
 
 .footer-box {
