@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js2_3</title>
+</head>
+
+    <script>
+        function speak(prefix) {
+            let name = document.getElementById("name").value;
+            alert(prefix + " " + name);
+        }
+    </script>
+
+<body>
+        <form>
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" placeholder=" ">
+       
+            <br>
+            <br>
+    
+            <button type="button" onclick="speak('Hello')">Hello</button>
+            <button type="button" onclick="speak('Good Bye')">Good Bye</button>
+            <button type="button" onclick="speak('Greetings')">Greetings</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js2_4</title>
+</head>
+    
+    <script>
+        function speak(action) {
+            let prefix = action.target.textContent;
+            let name = document.getElementById("name").value;
+            
+            alert(prefix + " " + name);
+        }
+
+        window.onload = function() {
+            let helloButton = document.getElementById("helloButton");
+            let goodByeButton = document.getElementById("goodByeButton");
+            let greetingsButton = document.getElementById("greetingsButton");
+            
+            //asign event handler within window.onload
+            helloButton.onclick = speak;
+            goodByeButton.onclick = speak;
+            greetingsButton.onclick = speak;
+        }
+        
+   </script>
+<body>
+    <form>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" placeholder=" ">
+        
+        <br>
+        <br>
+
+        <button type="button" id="helloButton">Hello</button>
+        <button type="button" id="goodByeButton">Good Bye</button>
+        <button type="button" id="greetingsButton">Greetings</button>
+    </form>
+</body>
+</html>

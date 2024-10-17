@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>js2_ec</title>
+    <style>
+        #stateDisplay {
+            border: 0.5px solid black;
+            width: 200px;
+            padding: 3px;
+            min-height: 50px;
+            font-size: 12px;
+        }
+      </style>
+      
+ <script>
+    window.onload = function () {
+        let states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia"];
+        let list = document.getElementById("stateSelect");
+        let originalStates = [...states];
+
+        states.forEach((state, index) => {
+            let option = document.createElement('option');
+            option.value = state;
+            option.text = state;
+      
+            if (index === 0) {
+                option.selected = true;
+            }
+      
+            list.appendChild(option);
+        });
+      
+        document.getElementById("addButton").onclick = function() {
+            let selectedState = list.value;
+            let stateDisplay = document.getElementById("stateDisplay");
+                  
+            stateDisplay.innerHTML += `<p>${stateDisplay.childElementCount + 1}. ${selectedState}</p>`; //orders list
+            list.remove(list.selectedIndex); //remove item once it's been selected
+        };
+      
+        document.getElementById("clearButton").onclick = function() {
+            document.getElementById("stateDisplay").innerHTML = "";
+            list.innerHTML = ""; //option is no longer available
+                
+            //renews list
+            originalStates.forEach(state => {
+                let option = document.createElement('option');
+                    option.value = state;
+                    option.text = state;
+                    list.appendChild(option);
+            });
+
+            list.options[0].selected = true;
+            };
+        };
+    </script>
+      
+</head>
+    
+<body>
+      
+        <label for="stateSelect">Choose a state:</label><br>
+        <select id="stateSelect" size="10" style="width: 200px;"></select>
+        
+        <br>
+        <br>
+      
+        <button type="button" id="addButton">Add State</button>
+        
+        <br>
+        <br>
+      
+        <div id="stateDisplay"></div>
+        
+        <br>
+      
+        <button type="button" id="clearButton">Clear States</button>
+      
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>js2_2</title>
+</head>
+
+<body>
+    <script>
+        let list = "Pat, Chris, Marlon, Ferncroft, Assunta";
+
+        let namesArray = list.split(", ");
+
+        let items = namesArray.map((name, index) => `<ol> ${index + 1}. ${name} </ol>`).join('');
+
+        document.body.innerHTML = `${items}`;
+    </script>
+</body>
+</html>
