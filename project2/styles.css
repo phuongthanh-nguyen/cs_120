@@ -103,7 +103,7 @@ h1 {
 }
 
 #newGameButton {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .usedLetterBoard {
