@@ -1,0 +1,64 @@
+{
+    "playlist": [
+        {
+            "songTitle": "Die With A Smile",
+            "artistName": "Bruno Mars, Lady Gaga",
+            "yearReleased": "2024",
+            "genre": "Pop, Rock"
+        },
+        {
+            "songTitle": "Juno",
+            "artistName": "Sabrina Carpenter",
+            "yearReleased": "2024",
+            "genre": "Pop"
+        },
+        {
+            "songTitle": "Paradise",
+            "artistName": "Chase Atlantic",
+            "yearReleased": "2016",
+            "genre": "Pop, Rock, R&B"
+        },
+        {
+            "songTitle": "Call Me",
+            "artistName": "Wren Evans",
+            "yearReleased": "2023",
+            "genre": "Pop, R&B"
+        },
+        {
+            "songTitle": "You",
+            "artistName": "Troye Sivan, Tate McRae, Dj Regard",
+            "yearReleased": "2021",
+            "genre": "Pop, R&B"
+        },
+        {
+            "songTitle": "Bubble Gum",
+            "artistName": "NewJeans",
+            "yearReleased": "2024",
+            "genre": "Pop, R&B"
+        },
+        {
+            "songTitle": "Caught Up",
+            "artistName": "Khalid, Majid Jordan",
+            "yearReleased": "2019",
+            "genre": "Soul, R&B"
+        },
+        {
+            "songTitle": "Ice On My Baby",
+            "artistName": "Yung Bleu",
+            "yearReleased": "2018",
+            "genre": "Hip-hop"
+        },
+        {
+            "songTitle": "Type Shit",
+            "artistName": "Future, Metro Boomin, Travis Scott, Playboi Carti",
+            "yearReleased": "2024",
+            "genre": "Hip-hop"
+        },
+        {
+            "songTitle": "Sociopathic Dance Queen",
+            "artistName": "Amaarae",
+            "yearReleased": "2023",
+            "genre": "Pop"
+        }
+    ]
+}

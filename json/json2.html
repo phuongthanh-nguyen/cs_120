@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Playlist</title>
+
+        <style>
+            .song-container {
+                font-family: Arial;
+                line-height: 150%;
+                margin: 30px;
+                padding: 20px;
+                border: 1px solid #EEEEEE;
+                border-radius: 8px;
+            }
+            .song-title {
+                font-weight: bold;
+                font-style: italic;
+                font-size: 20px;
+                line-height: 175%;
+            }
+            .song-details {
+                margin-left: 10px;
+                font-size: 16px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    </head>
+
+    <body>
+        <div id="playlist"></div>
+
+        <script>
+            $.get('songs.json', function(data) {
+            
+                let htmlContent = '';
+
+                //Loop through each song in the playlist
+                data.playlist.forEach(song => {
+                    htmlContent += `
+                        <div class="song-container">
+                            <div class="song-title">${song.songTitle}</div>
+                            <div class="song-details">
+                                Artist: ${song.artistName}<br>
+                                Genre: ${song.genre}<br>
+                                Released ${song.yearReleased}<br>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            document.getElementById('playlist').innerHTML = htmlContent;
+        });
+        </script>
+    </body>
+</html>

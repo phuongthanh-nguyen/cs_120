@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>Playlist</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            .song-container {
+                margin: 30px;
+                padding: 20px;
+                border: 1px solid #EEEEEE;
+                border-radius: 8px;
+            }
+            .song-title {
+                font-weight: bold;
+                font-style: italic;
+                font-size: 20px;
+                line-height: 1.75;
+            }
+            button {
+                padding: 8px;
+                margin-left: 20px;
+            }
+            #filteredList {
+                display: none;
+                margin-top: 20px;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <label for="genreFilter">Filter by:</label>
+        <select id="genreFilter">
+            <option value="">Genre</option>
+        </select>
+
+        <button id="filterButton">Filter</button>
+
+        <div id="playlist"></div>
+        <div id="filteredList"></div>
+
+        <script>
+            $.get('songs.json', function(data) {
+                let htmlContent = '';
+                const genres = new Set();
+
+                data.playlist.forEach(song => {
+                    htmlContent += `
+                        <div class="song-container">
+                            <div class="song-title">${song.songTitle}</div>
+                            <div>Artist: ${song.artistName}</div>
+                            <div>Genre: ${song.genre}</div>
+                            <div>Released: ${song.yearReleased}</div>
+                        </div>
+                    `;
+                    song.genre.split(', ').forEach(genre => genres.add(genre));
+                });
+                
+                document.getElementById('playlist').innerHTML = htmlContent;
+
+                const genreFilter = document.getElementById('genreFilter');
+                genres.forEach(genre => {
+                    const option = document.createElement('option');
+                    option.value = genre;
+                    option.textContent = genre;
+                    genreFilter.appendChild(option);
+                });
+
+                document.getElementById('filterButton').addEventListener('click', () => {
+                    const selectedGenre = genreFilter.value;
+                    const playlistDiv = document.getElementById('playlist');
+                    const filteredListDiv = document.getElementById('filteredList');
+                    filteredListDiv.innerHTML = ''; //clear previous results
+
+                    //check for any genre selected
+                    if (selectedGenre) {
+                        const filteredSongs = data.playlist.filter(song => 
+                            song.genre.split(', ').includes(selectedGenre)
+                        );
+
+                        if (filteredSongs.length > 0) {
+                            filteredSongs.forEach(song => {
+                                const titleDiv = document.createElement('div');
+                                titleDiv.textContent = song.songTitle; 
+                                filteredListDiv.appendChild(titleDiv);
+                            });
+                        } else {
+                            filteredListDiv.textContent = 'No songs found.';
+                        }
+                        
+                        //show filtered results
+                        playlistDiv.style.display = 'none';
+                        filteredListDiv.style.display = 'block';
+                    } else {
+                        //show all songs if "Genre" is selected
+                        playlistDiv.style.display = 'block';
+                        filteredListDiv.style.display = 'none';
+                    }
+                });
+            }).fail(function() {
+                console.error('Failed to load songs.json. Make sure the file exists and is correctly linked.');
+            });
+        </script>
+    </body>
+</html>
