@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In the Mood for a Cocktail?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .cocktail {
+            border: 1px solid #067fd0;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px 10px;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+        }
+        .cocktail img {
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 5px;
+        }
+        .cocktail-info {
+            display: flex;
+            flex-direction: column;
+        }
+        .cocktail-name {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>In the Mood for a Cocktail?</h1>
+    <div id="cocktail-container"></div>
+
+     <script>
+        const apiUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail';
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const cocktails = data.drinks;
+                const container = document.getElementById('cocktail-container');
+
+                cocktails.forEach(cocktail => {
+                    const cocktailDiv = document.createElement('div');
+                    cocktailDiv.classList.add('cocktail');
+
+                    const cocktailImage = document.createElement('img');
+                    cocktailImage.src = cocktail.strDrinkThumb;
+                    cocktailImage.alt = cocktail.strDrink;
+
+                    const cocktailName = document.createElement('div');
+                    cocktailName.classList.add('cocktail-name');
+                    cocktailName.innerText = cocktail.strDrink;
+
+                    cocktailDiv.appendChild(cocktailImage);
+                    cocktailDiv.appendChild(cocktailName);
+                    container.appendChild(cocktailDiv);
+                });
+            })
+            .catch(() => {
+            });
+    </script>
+</body>
+</html>
