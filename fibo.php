@@ -35,7 +35,6 @@ if (isset($_GET['n']) && is_numeric($_GET['n']) && $_GET['n'] >= 0) {
     echo json_encode($response);
 
 } else {
-    echo json_encode(["Please enter a non-negative number for n."])
-
+    echo json_encode(["error" => "Please enter a non-negative number for n."]);
 }
 ?>
