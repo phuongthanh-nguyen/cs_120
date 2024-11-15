@@ -11,11 +11,17 @@ if (isset($_GET['n']) && is_numeric($_GET['n']) && $_GET['n'] >= 0) {
         $a = 0;
         $b = 1;
 
+        if ($n == 0) {
+            return $sequence;
+        }
+
+        $sequence[] = $a;
+
         for ($i = 0; $i < $n; $i++) {
-            $sequence[] = $a;
             $value = $a + $b;
             $a = $b; // output of this loop
             $b = $value; // to be added next loop
+            $sequence[] = $a;
         }
 
         return $sequence;
