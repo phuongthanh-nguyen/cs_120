@@ -1,19 +1,32 @@
 <?php
+//setting values for connection to serve
+$server = "localhost";
+$userid = "ugwgbwnkgwe47";
+$pw = "Minimalblue2.";
+$db = "dbzyrgzj0leluu";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dbzyrgzj0leluu";
+//connect to serve
+$conn = new mysqli($server, $userid, $pw);
 
-$connection = new mysqli($servername, $username, $password, $dbname);
-
-if ($connection->connect_error) {
-    die("Connection had failed". $connection->connect_error);
+//did it work?
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+echo "Connected successfully";
+
+//select db
+if (!$conn->select_db($db)) {
+    die("Database selection failed: " . $conn->error);
+}
+
 
 //query to get genres directly from db
 $sql = "SELECT id, name FROM genres";
-$result = $connection->query($sql);
+$result = $conn->query($sql);
+//checks for query error
+if (!$result) {
+    die("Query failed: " . $conn->error);
+}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!empty($_POST['genres'])) {
@@ -30,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>db1</title>
 </head>
 <body>
@@ -52,3 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </body>
 </html>
+
+<?php
+$conn->close();
+?>
